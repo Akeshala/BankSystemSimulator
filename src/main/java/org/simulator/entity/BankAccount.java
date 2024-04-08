@@ -13,13 +13,6 @@ public class BankAccount {
     private final AccountType accountType;
     private BigDecimal interestRate;
 
-    public BankAccount(String accountNumber, List<String> customerNames, BigDecimal balance, AccountType accountType) {
-        this.accountNumber = accountNumber;
-        this.customerNames = customerNames;
-        this.balance = balance;
-        this.accountType = accountType;
-    }
-
     public BankAccount(String accountNumber, List<String> customerNames, AccountType accountType, BigDecimal interestRate) {
         this.accountNumber = accountNumber;
         this.customerNames = customerNames;
@@ -29,22 +22,6 @@ public class BankAccount {
 
     public String getAccountNumber() {
         return accountNumber;
-    }
-
-    public void setAccountNumber(String accountNumber) {
-        this.accountNumber = accountNumber;
-    }
-
-    public List<String> getCustomerNames() {
-        return customerNames;
-    }
-
-    public void setCustomerNames(List<String> customerNames) {
-        this.customerNames = customerNames;
-    }
-
-    public AccountType getAccountType() {
-        return accountType;
     }
 
     public BigDecimal getInterestRate() {

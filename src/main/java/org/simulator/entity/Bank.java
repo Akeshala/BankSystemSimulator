@@ -17,26 +17,6 @@ public class Bank {
         return bankAccount;
     }
 
-    public boolean removeAccount(String accountNumber) {
-        for (BankAccount bankAccount : this.bankAccounts) {
-            if (bankAccount.getAccountNumber().equals(accountNumber)) {
-                this.bankAccounts.remove(bankAccount);
-                return true;
-            }
-        }
-
-        return false;
-    }
-
-    public BankAccount getAccount(String accountNumber) {
-        for (BankAccount bankAccount : this.bankAccounts) {
-            if (bankAccount.getAccountNumber().equals(accountNumber)) {
-                return bankAccount;
-            }
-        }
-        return null;
-    }
-
     public synchronized void addInterest() {
         for (BankAccount account : bankAccounts) {
             if (account.getBalance().compareTo(BigDecimal.ZERO) > 0) {

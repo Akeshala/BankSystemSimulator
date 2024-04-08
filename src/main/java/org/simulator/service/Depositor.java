@@ -22,7 +22,5 @@ public class Depositor implements Runnable {
 		}catch(Exception e) {
 			System.out.println("Error in deposit: " + e.getMessage());
 		}
-		
 	}
-
 }

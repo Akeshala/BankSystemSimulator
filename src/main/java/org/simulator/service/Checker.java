@@ -22,8 +22,4 @@ public class Checker implements Runnable {
 			System.out.println("Error in deposit: "+e.getMessage());
 		}
 	}
-
-	public BigDecimal getAmount() {
-		return amount;
-	}
 }

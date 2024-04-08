@@ -1,11 +1,18 @@
 package org.simulator;
 
+import org.simulator.entity.Bank;
+import org.simulator.entity.BankAccount;
+import org.simulator.service.Checker;
+import org.simulator.service.Depositor;
+import org.simulator.service.InterestCalculationManager;
+import org.simulator.service.Receiver;
+
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.simulator.AccountType.REGULAR;
-import static org.simulator.AccountType.VIP;
+import static org.simulator.constants.AccountType.REGULAR;
+import static org.simulator.constants.AccountType.VIP;
 
 public class Client {
     public static void main(String[] args) {
@@ -91,5 +98,16 @@ public class Client {
         for (Thread thread: threads) {
             thread.start();
         }
+
+        // Wait for all threads to terminate
+        for (Thread thread : threads) {
+            try {
+                thread.join();
+            } catch (InterruptedException e) {
+                System.out.println("Error in withdrawal " + e.getMessage());
+            }
+        }
+
+        System.out.println("All threads have terminated.");
     }
 }

@@ -1,4 +1,6 @@
-package org.simulator;
+package org.simulator.service;
+
+import org.simulator.entity.BankAccount;
 
 import java.math.BigDecimal;
 

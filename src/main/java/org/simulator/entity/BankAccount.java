@@ -1,4 +1,6 @@
-package org.simulator;
+package org.simulator.entity;
+
+import org.simulator.constants.AccountType;
 
 import java.math.BigDecimal;
 import java.util.List;

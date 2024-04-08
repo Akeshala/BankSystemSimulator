@@ -1,4 +1,6 @@
-package org.simulator;
+package org.simulator.service;
+
+import org.simulator.entity.Bank;
 
 public class InterestCalculationManager implements Runnable {
 	
@@ -12,10 +14,12 @@ public class InterestCalculationManager implements Runnable {
 	@Override
 	public void run() {
 		try {
-			bank.addInterest();
+			for (int i = 0; i < 5; i++) {
+				bank.addInterest();
+				Thread.sleep(1000);
+			}
 		}catch(Exception e) {
 			System.out.println("Error in interest calculation: "+e.getMessage());
 		}
 	}
-
 }

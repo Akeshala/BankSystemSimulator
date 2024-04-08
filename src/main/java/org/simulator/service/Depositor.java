@@ -1,4 +1,6 @@
-package org.simulator;
+package org.simulator.service;
+
+import org.simulator.entity.BankAccount;
 
 import java.math.BigDecimal;
 
@@ -18,7 +20,7 @@ public class Depositor implements Runnable {
 		try {
 			bankAccount.deposit(amount);
 		}catch(Exception e) {
-			System.out.println("Error in deposit: "+e.getMessage());
+			System.out.println("Error in deposit: " + e.getMessage());
 		}
 		
 	}
